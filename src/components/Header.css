@@ -1,7 +1,6 @@
 .header{
     width: 100%;
     display: flex;
-    justify-content: center;
     align-items: center;
     flex-direction: column;
 }
@@ -22,6 +21,7 @@
 
 .second-header{
     display: flex;
+    margin-bottom: 1rem;
 }
 
 .todo-box{
