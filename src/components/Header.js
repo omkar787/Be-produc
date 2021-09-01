@@ -7,7 +7,14 @@ export default function Header({ todosList, settodosList }) {
     const todoText = useRef("")
 
     function onClearHandle(e){
-
+        const temp = todosList.filter((item) => {
+            if(item.completed){
+                return false
+            }else{
+                return true
+            }
+        })
+        settodosList(temp)
     }
     function onSubmitHandle(e) {
         const text = todoText.current.value
