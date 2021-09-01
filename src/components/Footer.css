@@ -1,0 +1,15 @@
+footer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 0;
+}
+
+.footer-text{
+    font-family: monospace;
+}
+
+.footer-text a{
+    text-decoration: none;
+    color: rgb(51, 255, 0);
+}

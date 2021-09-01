@@ -1,6 +1,7 @@
 import React, { useEffect, useRef } from 'react'
 import "./Header.css"
 import Todos from './Todos'
+import Footer from './Footer'
 import { v4 as uuidv4 } from "uuid"
 
 export default function Header({ todosList, settodosList }) {
@@ -56,6 +57,9 @@ export default function Header({ todosList, settodosList }) {
             </div>
 
             <Todos todosList={todosList} settodosList={settodosList} />
+            <Footer />
         </div>
+        
+
     )
 }
