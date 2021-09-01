@@ -6,15 +6,18 @@ import { v4 as uuidv4 } from "uuid"
 export default function Header({ todosList, settodosList }) {
     const todoText = useRef("")
 
-    function onClearHandle(e){
-        const temp = todosList.filter((item) => {
-            if(item.completed){
-                return false
-            }else{
-                return true
-            }
-        })
-        settodosList(temp)
+    function onClearHandle(e) {
+        if (todosList.length !== 0) {
+            const temp = todosList.filter((item) => {
+                if (item.completed) {
+                    return false
+                } else {
+                    return true
+                }
+            })
+            settodosList(temp)
+        }
+
     }
     function onSubmitHandle(e) {
         const text = todoText.current.value
@@ -26,7 +29,6 @@ export default function Header({ todosList, settodosList }) {
             }
             const arr = [...todosList, temp]
             settodosList(arr)
-            console.log(todosList)
             todoText.current.value = ""
 
         }
@@ -36,7 +38,6 @@ export default function Header({ todosList, settodosList }) {
     useEffect(() => {
         if (todosList) {
             localStorage.setItem('todos-list', JSON.stringify(todosList))
-            console.log("bye");
         }
 
         return () => {
