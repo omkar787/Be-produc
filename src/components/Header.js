@@ -36,6 +36,12 @@ export default function Header({ todosList, settodosList }) {
 
     }
 
+    function handleKeyPress(e){
+        if(e.key === "Enter"){
+            onSubmitHandle()
+        }
+    }
+
     useEffect(() => {
         if (todosList) {
             localStorage.setItem('todos-list', JSON.stringify(todosList))
@@ -51,9 +57,9 @@ export default function Header({ todosList, settodosList }) {
             <h1 className="title">Be Produc</h1>
             <h3 className="sub-title">A To-Do App</h3>
             <div className="second-header">
-                <input ref={todoText} className="todo-box" name="todo" type="text" placeholder="Your To-Do" required />
+                <input onKeyPress={handleKeyPress} ref={todoText} className="todo-box" name="todo" type="text" placeholder="Your To-Do" required />
                 <button onClick={onSubmitHandle} className="submit-btn" type="submit">Add</button>
-                <button onClick={onClearHandle} className="submit-btn clear-btn" type="submit">Clear</button>
+                <button onClick={onClearHandle} className="submit-btn clear-btn" >Clear</button>
             </div>
 
             <Todos todosList={todosList} settodosList={settodosList} />
