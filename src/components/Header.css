@@ -24,6 +24,9 @@
     margin-bottom: 1rem;
 }
 
+.clear-btn{
+    margin-left: 10px;
+}
 .todo-box{
     width: 30vw;
     margin-right: 20px;
@@ -43,4 +46,10 @@
     border-radius: 5px;
     padding: 2px;
     cursor: pointer;
+}
+
+@media (max-width:400px){
+    .submit-btn{
+        width: 20vw;
+    }
 }

@@ -6,6 +6,9 @@ import { v4 as uuidv4 } from "uuid"
 export default function Header({ todosList, settodosList }) {
     const todoText = useRef("")
 
+    function onClearHandle(e){
+
+    }
     function onSubmitHandle(e) {
         const text = todoText.current.value
         if (text !== "") {
@@ -41,6 +44,7 @@ export default function Header({ todosList, settodosList }) {
             <div className="second-header">
                 <input ref={todoText} className="todo-box" name="todo" type="text" placeholder="Your To-Do" required />
                 <button onClick={onSubmitHandle} className="submit-btn" type="submit">Add</button>
+                <button onClick={onClearHandle} className="submit-btn clear-btn" type="submit">Clear</button>
             </div>
 
             <Todos todosList={todosList} settodosList={settodosList} />
